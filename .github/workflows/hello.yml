@@ -1,6 +1,6 @@
 name: Hello
 on:
-  push:
+  
   workflow_dispatch:
 jobs:
   greet:
@@ -35,4 +35,7 @@ jobs:
     steps:
       - name: お別れ
         run: echo "greet が終わったので goodbye です"
-
+      - name: 自分の情報
+        run: |
+          echo "${{ github.actor }} が ${{ github.ref_name }} ブランチに push しました"
+          TZ=Asia/Tokyo date
